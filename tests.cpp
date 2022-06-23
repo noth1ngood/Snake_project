@@ -85,10 +85,11 @@ TEST_CASE("telodvizhenia1"){
         snake.field[0][j] = j + 1;
     }
     snake.field[0][5] = WALL;
-    snake.snake_pos_x = 0;
-    snake.snake_pos_y = 4;
+    snake.snake_pos_x = 15;
+    snake.snake_pos_y = 15;
+    snake.snake_napr = SNAKE_MOVE_UP;
     movement(snake);
-    bool answer = (snake.field[1][5] > 0 and snake.field[0][11] > 0);
+    bool answer = (snake.field[16][15] > 0 );
             CHECK(!answer);
 }
 TEST_CASE("stena"){
@@ -104,10 +105,4 @@ TEST_CASE("stena"){
     }
     bool answer = (snake.field[0][4] == -2 and snake.field[0][3] == -2 and snake.field[0][2] == -2 and snake.field[0][1] == -2 and snake.field[0][0] == -2);
             CHECK(answer);
-}
-TEST_CASE("check_level") {
-    snake snake;
-    bool test = true;
-    int len = 4;
-    bool ans =
 }
